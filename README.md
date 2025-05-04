@@ -1,1 +1,13 @@
-# ping
+name: Ping Supabase
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Executa a cada 6 horas
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fazer ping no Supabase
+        run: curl "https://xvulyedlxgitvbkhujbz.supabase.co/rest/v1/ping?select=*&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2dWx5ZWRseGdpdHZia2h1amJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxODEwODAsImV4cCI6MjA2MTc1NzA4MH0.RJ4K9C_XPSRa1sIv0g7WEBJ7eQ8PAKKrBnweQSpJwYk"
